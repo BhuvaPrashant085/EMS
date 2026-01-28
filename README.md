@@ -60,3 +60,20 @@ This EMS provides:
 ---
 
 ## 🧱 Project Structure
+
+
+
+ems/
+├── accounts/
+├── dashboard/
+├── emergencies/
+├── services/
+├── ems/
+├── manage.py
+└── README.md
+
+
+## ▶️ How to Run
+```bash
+python manage.py migrate
+python manage.py runserver
