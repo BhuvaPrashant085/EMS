@@ -1,0 +1,27 @@
+<h2>🚨 Emergency SOS</h2>
+
+<form method="POST">
+  {% csrf_token %}
+
+  <label>Emergency Type:</label>
+  <select name="emergency_type">
+    <option value="MEDICAL">Medical</option>
+    <option value="ACCIDENT">Accident</option>
+    <option value="FIRE">Fire</option>
+    <option value="CRIME">Crime</option>
+    <option value="DISASTER">Disaster</option>
+  </select>
+
+  <input type="hidden" name="latitude" id="lat">
+  <input type="hidden" name="longitude" id="lng">
+
+  <button type="submit">Send SOS</button>
+</form>
+
+<script>
+navigator.geolocation.getCurrentPosition(function(position){
+  document.getElementById('lat').value = position.coords.latitude;
+  document.getElementById('lng').value = position.coords.longitude;
+});
+</script>
+    
